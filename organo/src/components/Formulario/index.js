@@ -10,7 +10,7 @@ const Formulario = (props) => {
     const [autor, setAutor] = useState('')
     const [imagem, setImagem] = useState('')
     const [genero, setGenero] = useState('')
-    
+
     const aoSalvar = (event) => {
         event.preventDefault()
         props.aoLivroCadastrado({
@@ -21,19 +21,7 @@ const Formulario = (props) => {
         })
     }
 
-    const generos = [
-        'Romance',
-        'Conto',
-        'Novela',
-        'Ficção Científica',
-        'Fantasia',
-        'Ficção Histórica',
-        'Ficção Policial/Mistério',
-        'Infantil',
-        'Quadrinhos',
-        'Ficção LGBTQIAPN+',
-        'Suspense'
-    ]
+
 
 
     return (
@@ -66,7 +54,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Gêneros"
-                    itens={generos}
+                    itens={props.listGeneros}
                     valor={genero}
                     aoAlterado={valor => setGenero(valor)}
                 />
